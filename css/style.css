@@ -60,12 +60,11 @@
         }
 
         /* Struttura principale sotto la testata */
-		.container {
-		    display: flex;
-		    flex: 1;
-		    height: calc(100vh - 160vh); /* Si adatta allo spazio sotto la testata (160px è l'altezza dell'header) */
-		    overflow: hidden;
-		}
+        .container {
+            display: flex;
+            flex: 1;
+			overflow: hidden;
+        }
 
         /* Pannello di navigazione a sinistra */
         nav {
@@ -96,15 +95,28 @@
         }
 
         /* Area dei contenuti */
-        main {
-            flex: 1;
-            padding: 30px;
-            background-color: #050505;
-			overflow-y: auto;      /* Attiva la barra di scorrimento verticale solo qui */
-            height: 100%;          /* Si adatta all'altezza del contenitore */
-        }
+		.container {
+			display: flex;
+			flex: 1;
+			height: calc(100vh - 160px);
+			overflow: hidden;
+		}
 
-		main h1 {
+		main {
+			flex: 1;
+			padding: 30px;
+			background-color: #050505;
+			overflow-y: auto;
+			/* Abbiamo rimosso height: 100% perché flex: 1 gestisce già perfettamente l'altezza */
+		}
+
+		/* IMPORTANTE: Dice all'ultimo paragrafo o elemento dentro il main di non avere margini sotto, 
+		   evitando quei pochi pixel di troppo che fanno comparire la scrollbar */
+		main > *:last-child {
+			margin-bottom: 0;
+		}
+
+        main h1 {
             margin-bottom: 20px;
             color: #ffffff;
         }
