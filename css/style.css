@@ -60,11 +60,12 @@
         }
 
         /* Struttura principale sotto la testata */
-        .container {
-            display: flex;
-            flex: 1;
-			overflow: hidden;
-        }
+		.container {
+		    display: flex;
+		    flex: 1;
+		    height: calc(100vh - 160vh); /* Si adatta allo spazio sotto la testata (160px è l'altezza dell'header) */
+		    overflow: hidden;
+		}
 
         /* Pannello di navigazione a sinistra */
         nav {
@@ -103,7 +104,7 @@
             height: 100%;          /* Si adatta all'altezza del contenitore */
         }
 
-        main h1 {
+		main h1 {
             margin-bottom: 20px;
             color: #ffffff;
         }
