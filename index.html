@@ -2,10 +2,102 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Il mio primo sito su GitHub Pages</title>
-</head>
-<body>
-    <h1>Benvenuto nel mio nuovo sito!</h1>
-    <p>Questo sito è stato creato e pubblicato con GitHub Pages.</p>
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILITIA - Home</title>
+    <style>
+        /* Reset di base e sfondo nero globale */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Testata (Header) */
+        header {
+            display: flex;
+            height: 120px;
+            background-color: #111111;
+            border-bottom: 1px solid #333333;
+            overflow: hidden;
+        }
+
+        /* Logo a sinistra */
+        .header-logo {
+            width: 200px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Immagine che riempie il resto della testata */
+        .header-banner {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .header-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Struttura principale sotto la testata */
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Pannello di navigazione a sinistra */
+        nav {
+            width: 220px;
+            background-color: #121212;
+            border-right: 1px solid #222222;
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: #cccccc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #252525;
+            color: #ffffff;
+        }
+
+        /* Area dei contenuti */
+        main {
+            flex: 1;
+            padding: 30px;
+            background-color: #050505;
+        }
+
+        main h1 {
+            margin-
