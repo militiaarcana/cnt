@@ -197,6 +197,38 @@
 			margin: 20px 0;     /* Spazio sopra e sotto */
 		}
 
+		/* ==========================================
+		   SCROLLBAR NERA SU CHROME / EDGE / SAFARI
+		   ========================================== */
+
+		/* 1. Applica la scrollbar sia all'intera pagina che al main */
+		::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+
+		/* 2. Sfondo del binario di scorrimento (Nero puro) */
+		::-webkit-scrollbar-track {
+			background: #FF9099 !important;
+		}
+
+		/* 3. Barretta che si muove (Nero o grigio scurissimo) */
+		::-webkit-scrollbar-thumb {
+			background: #111111 !important; /* Metti #000000 se la vuoi totalmente invisibile */
+			border-radius: 4px;
+			border: 1px solid #000000;
+		}
+
+		/* 4. Quando ci passi sopra con il mouse */
+		::-webkit-scrollbar-thumb:hover {
+			background: #222222 !important;
+		}
+
+		/* 5. Angolo tra le due scrollbar (se presente) */
+		::-webkit-scrollbar-corner {
+			background: #000000 !important;
+		}
+
 /* ==========================================
    VERSIONE MOBILE (Smartphone)
    ========================================== */
