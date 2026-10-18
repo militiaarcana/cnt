@@ -195,3 +195,65 @@
 			border-radius: 6px; /* Opzionale: arrotonda i bordi */
 			margin: 20px 0;     /* Spazio sopra e sotto */
 		}
+
+/* ==========================================
+   VERSIONE MOBILE (Smartphone)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. Sblocca lo scroll generale sul telefono */
+    body {
+        height: auto;
+        overflow: auto;
+    }
+
+    /* 2. Riduci l'altezza della testata per non occuparetroppo spazio */
+    header {
+        height: 100px;
+    }
+
+    .header-logo {
+        width: 120px;
+    }
+
+    /* 3. Metti il menu SOPRA e il testo SOTTO (disposizione in colonna) */
+    .container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* 4. Il menu di navigazione diventa una barra orizzontale in alto */
+    nav {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #222222;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        text-align: center;
+    }
+
+    /* 5. L'area dei contenuti torna a scorrere normalmente */
+    main {
+        height: auto;
+        overflow-y: visible;
+        padding: 20px;
+    }
+
+    /* 6. L'immagine non sta più a sinistra ma va sopra al testo a tutta larghezza */
+    .img-float-left {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
