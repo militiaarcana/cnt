@@ -20,7 +20,7 @@
         header {
             display: flex;
             height: 220px; /* Aumentata l'altezza per far respirare il logo */
-            background-color: #111111;
+            background-color: #000000;
             border-bottom: 1px solid #FF9099;			
             overflow: hidden;
 			flex-shrink: 0;
