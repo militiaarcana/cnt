@@ -4,100 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MILITIA - Home</title>
-    <style>
-        /* Reset di base e sfondo nero globale */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    <!-- Testata -->
+    <header>
+        <div class="header-logo">
+            <img src="img/MA_LOGO.png" alt="" class="responsive-img">
+        </div>
+        <div class="header-banner">
+            <img src="img/OWL_BAN_BLACK.png" alt="">
+        </div>
+    </header>
 
-        /* Testata (Header) */
-        header {
-            display: flex;
-            height: 120px;
-            background-color: #111111;
-            border-bottom: 1px solid #333333;
-            overflow: hidden;
-        }
+    <!-- Corpo principale -->
+    <div class="container">
+        <!-- Menu di navigazione a sinistra -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Intro</a></li>
+                <li><a href="statuto.html">Statuto</a></li>
+            </ul>
+        </nav>
 
-        /* Logo a sinistra */
-        .header-logo {
-            width: 200px;
-            background-color: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            flex-shrink: 0;
-        }
+        <!-- Area dei contenuti -->
+        <main>
+            <h1><b>MILITIA ARCANA</b></h1>
+            
+			<div class="text-with-image">
+				
+				<img src="img/MA_MEMBERS.jpeg" alt="" class="img-float-left">
+				
+				<!-- Testo che scorre attorno all'immagine -->
+				<p>
+					<i>6 Agosto 2026 — L'inizio di una nuova fratellanza</i><br /><br />
+					Da una idea di Elymas (Brisen) nasce Militia Arcana.
+					Non nasce semplicemente una nuova realtà musicale. 
+					Nasce una fratellanza.
+				</p>
 
-        .header-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
+				<p>
+					Una fratellanza formata da band metal italiane unite da un legame che va oltre la musica, oltre i palchi e oltre le singole esperienze personali. Un legame fondato sulla volontà di preservare e condividere un immaginario fatto di occulto, esoterismo, magia, folklore popolare, leggende, misteri e tradizioni del territorio italiano.
+					Militia Arcana nasce dall'idea che il Metal possa essere anche ricerca, memoria e identità. Le nostre terre sono ricche di racconti dimenticati, rituali antichi, simboli, superstizioni, tradizioni popolari e storie tramandate attraverso generazioni. 
+					<br />
+					È da questo patrimonio che vogliamo attingere, trasformandolo in musica, parole, immagini e arte.
+					Non vogliamo creare una semplice associazione di band.
+					Vogliamo creare una comunità.
+					<br />
+					Un luogo ideale nel quale le band possano sostenersi reciprocamente, condividere esperienze, aiutarsi, promuovere la propria musica e mantenere vivo quello spirito di fratellanza che appartiene alla storia stessa della scena Metal.
+					Militia Arcana non chiede alle band di essere uguali.
+					Al contrario, la sua forza nasce dalle differenze.
+					Ogni gruppo porta con sé la propria storia, il proprio suono, la propria visione e il proprio territorio. Ciò che ci unisce non è la ricerca dell'uniformità, ma la consapevolezza di appartenere a qualcosa di più grande: una scena italiana capace di raccontare il proprio lato oscuro attraverso la creatività.
+					<br />
+					<br />
+					Militia Arcana è un patto di fratellanza.
+					Un patto basato sul rispetto, sulla collaborazione e sul sostegno reciproco.
+				</p>
 
-        /* Immagine che riempie il resto della testata */
-        .header-banner {
-            flex: 1;
-            overflow: hidden;
-        }
+				<p>
+					Il 6 agosto 2026 rappresenta quindi una soglia.
+					Da una parte ciò che è stato: anni di musica, concerti, sacrifici, prove, demo, album, amicizie e battaglie.
+					Dall'altra ciò che deve ancora venire.
+					Una nuova pagina che sarà scritta insieme.
+					<br />
+					Non sappiamo ancora dove ci condurrà questa strada.				
+					Ma sappiamo da dove parte.<br />
+					Parte dall'Italia.<br />
+					Parte dal Metal.<br />
+					Parte dalle nostre storie.<br />
+					Parte da tutto ciò che per troppo tempo è rimasto nell'ombra.
+					<br />
+					<br />
+					E da oggi quell'ombra ha un nome: <b><i>MILITIA ARCANA.</i></b>	
+				</p>
+			</div>
+        </main>
+    </div>
 
-        .header-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Struttura principale sotto la testata */
-        .container {
-            display: flex;
-            flex: 1;
-        }
-
-        /* Pannello di navigazione a sinistra */
-        nav {
-            width: 220px;
-            background-color: #121212;
-            border-right: 1px solid #222222;
-            padding: 20px 0;
-            flex-shrink: 0;
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li a {
-            display: block;
-            padding: 12px 20px;
-            color: #cccccc;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        nav ul li a:hover {
-            background-color: #252525;
-            color: #ffffff;
-        }
-
-        /* Area dei contenuti */
-        main {
-            flex: 1;
-            padding: 30px;
-            background-color: #050505;
-        }
-
-        main h1 {
-            margin-
+</body>
+</html>

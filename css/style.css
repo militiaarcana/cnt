@@ -1,0 +1,184 @@
+/* Reset di base e sfondo nero globale */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            /* min-height: 100vh; */
+			height: 100vh;
+            display: flex;
+            flex-direction: column;	
+			overflow: hidden;			
+        }
+
+        /* Testata (Header) */
+        header {
+            display: flex;
+            height: 220px; /* Aumentata l'altezza per far respirare il logo */
+            background-color: #111111;
+            border-bottom: 1px solid #FF9099;			
+            overflow: hidden;
+			flex-shrink: 0;
+        }
+
+        /* Logo a sinistra */
+        .header-logo {
+            width: 220px; /*  Larghezza aumentata per far stare un logo più grande */
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            /* 'contain' fa scalare il logo al massimo spazio disponibile senza tagliarlo o distorcerlo */
+            object-fit: cover; 
+			display: block;
+        }
+
+        /* Banner della testata */
+        .header-banner {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .header-banner img {
+            width: 100%;
+            height: 100%;
+            /* 'cover' adatta e stretta l'immagine per riempire tutto il banner senza lasciare spazi bianchi */
+            object-fit: cover; 
+            object-position: center; /* Mantiene il centro dell'immagine ben visibile */
+        }
+
+        /* Struttura principale sotto la testata */
+        .container {
+            display: flex;
+            flex: 1;
+			overflow: hidden;
+        }
+
+        /* Pannello di navigazione a sinistra */
+        nav {
+            width: 220px;
+            background-color: #121212;
+            border-right: 1px solid #FF9099;
+            padding: 20px 0;
+            flex-shrink: 0;
+			height: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: #cccccc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #252525;
+            color: #ffffff;
+        }
+
+        /* Area dei contenuti */
+        main {
+            flex: 1;
+            padding: 30px;
+            background-color: #050505;
+			overflow-y: auto;      /* Attiva la barra di scorrimento verticale solo qui */
+            height: 100%;          /* Si adatta all'altezza del contenitore */
+        }
+
+        main h1 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        /* Testo giustificato applicato via CSS */
+        main p {
+            line-height: 1.6;
+            color: #aaaaaa;
+            text-align: justify; 
+            margin-bottom: 20px;
+        }
+		
+		/* Contenitore flessibile per immagine e testo affiancati */
+        .content-row {
+            display: flex;
+            align-items: center; /* Allinea verticalmente al centro (puoi mettere 'flex-start' per allineare in alto) */
+            gap: 30px;           /* Spazio di separazione tra l'immagine e il testo */
+            margin: 40px 0;      /* Distanza sopra e sotto questo blocco */
+        }
+
+        /* Stile per il box dell'immagine */
+        .content-image {
+            width: 350px;        /* Puoi modificare la larghezza a piacimento */
+            flex-shrink: 0;      /* Impedisce all'immagine di rimpicciolirsi */
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;  /* Opzionale: arrotonda leggermente gli angoli */
+            display: block;
+        }
+
+        /* Stile per il box del testo */
+        .content-text {
+            flex: 1;             /* Fa in modo che il testo occupi tutto lo spazio rimanente */
+        }
+
+        .content-text h2 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .content-text p {
+            text-align: justify;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+		/* Contenitore per sicurezza */
+        .text-with-image {
+            overflow: hidden; /* Evita che il testo "debordi" fuori dal blocco */
+            margin-bottom: 30px;
+        }
+
+        /* Regola per l'immagine in alto a sinistra con testo intorno */
+        .img-float-left {
+            float: left;             /* Spinge l'immagine a sinistra e fa scorrere il testo attorno */
+            width: 300px;            /* Imposta la larghezza desiderata dell'immagine */
+            height: auto;            /* Mantiene le proporzioni originali */
+            margin-right: 20px;      /* Spazio di respiro tra l'immagine e il testo a destra */
+            margin-bottom: 15px;     /* Spazio sotto l'immagine prima che il testo continui sotto */
+            border-radius: 4px;      /* Opzionale: arrotonda leggermente i bordi */
+        }
+
+        /* Assicura che i paragrafi all'interno siano giustificati */
+        .text-with-image p {
+            text-align: justify;
+            color: #aaaaaa;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+		
+		.responsive-img {
+			width: 100%;
+			height: auto;
+			border-radius: 6px; /* Opzionale: arrotonda i bordi */
+			margin: 20px 0;     /* Spazio sopra e sotto */
+		}
