@@ -201,6 +201,25 @@
    ========================================== */
 @media (max-width: 768px) {
 
+	/* Riduciamo leggermente l'altezza della testata e rimuoviamo il padding in eccesso */
+    header {
+        height: 90px; /* puoi regolare l'altezza come preferisci, es. 90px o 100px */
+    }
+
+    .header-logo {
+        width: 110px;        /* Larghezza fissa proporzionata */
+        padding: 4px;        /* Riduciamo il padding per dare più spazio al logo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Garantisce che il logo si veda intero senza mai venire tagliato */
+    }
+	
     /* 1. Sblocca lo scroll generale sul telefono */
     body {
         height: auto;
