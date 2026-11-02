@@ -53,6 +53,7 @@
         }
 
         .header-banner img {
+			margin-top: 4.0em;
             width: 100%;
             height: 100%;
             /* 'cover' adatta e stretta l'immagine per riempire tutto il banner senza lasciare spazi bianchi */
