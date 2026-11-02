@@ -17,40 +17,41 @@
         }
 
         /* ==========================================
-		   Testata (Header) - Adattiva e Proporzionata
+		   TESTATA (Header) - PC (Fissa e Bilanciata)
 		   ========================================== */
 		header {
 		    display: flex;
 		    align-items: center;
 		    justify-content: space-between;
-		    /* L'altezza si adatta fluidamente ma ha un limite minimo e massimo perfetto */
-		    height: clamp(80px, 12vh, 120px); 
-		    padding: 10px 25px;
+		    height: 120px;            /* Altezza fissa pulita per PC */
+		    padding: 10px 30px;
 		    background-color: #000000;
 		    box-sizing: border-box;
 		    flex-shrink: 0;
 		}
 		
-		/* Logo a sinistra */
+		/* Logo a sinistra su PC */
 		.header-logo {
-		    height: 80%;            /* Occupa l'80% dell'altezza dell'header */
-		    aspect-ratio: 1 / 1;    /* Forza il logo a rimanere perfettamente quadrato */
+		    height: 100%;             /* Riempie esattamente i 120px dell'header */
+		    width: auto;
 		    display: flex;
 		    align-items: center;
-		    justify-content: center;
+		    justify-content: flex-start;
+		    padding: 0;
 		    flex-shrink: 0;
 		}
 		
 		.header-logo img {
-		    width: 100%;
-		    height: 100%;
-		    object-fit: contain;    /* Mai tagliato, proporzioni perfette */
+		    height: 90% !important;   /* Occupa il 90% dell'altezza dell'header lasciando un piccolo margine */
+		    width: auto !important;   /* Mantiene le proporzioni perfette */
+		    max-width: none;
+		    object-fit: contain;
 		    display: block;
 		}
 		
-		/* Immagine banner/testo a destra */
+		/* Banner / Immagine di testo a destra su PC */
 		.header-banner, .header-right-image {
-		    height: 75%;            /* Occupa il 75% dell'altezza dell'header */
+		    height: 100%;             /* Riempie l'altezza dell'header */
 		    display: flex;
 		    align-items: center;
 		    justify-content: flex-end;
@@ -58,8 +59,9 @@
 		}
 		
 		.header-banner img, .header-right-image img {
-		    height: 100%;           /* Riempie l'altezza del suo box mantenendo la larghezza automatica */
-		    width: auto;
+		    height: 70% !important;   /* Altezza ideale per rendere la scritta ben leggibile */
+		    width: auto !important;   /* Mantiene le proporzioni originali senza schiacciarla */
+		    max-width: 100%;
 		    object-fit: contain;
 		    display: block;
 		}
