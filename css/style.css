@@ -23,33 +23,34 @@
 		    display: flex;
 		    align-items: center;
 		    justify-content: space-between;
-		    height: 130px;            /* Altezza fissa ideale per PC (puoi regolarla a 120px o 140px se vuoi) */
-		    padding: 15px 30px;
+		    /* L'altezza si adatta fluidamente ma ha un limite minimo e massimo perfetto */
+		    height: clamp(80px, 12vh, 120px); 
+		    padding: 10px 25px;
 		    background-color: #000000;
 		    box-sizing: border-box;
 		    flex-shrink: 0;
 		}
 		
-		/* Logo a sinistra su PC */
+		/* Logo a sinistra */
 		.header-logo {
-		    height: 100%;             /* Occupa tutta l'altezza dell'header */
+		    height: 80%;            /* Occupa l'80% dell'altezza dell'header */
+		    aspect-ratio: 1 / 1;    /* Forza il logo a rimanere perfettamente quadrato */
 		    display: flex;
 		    align-items: center;
-		    justify-content: flex-start;
-		    padding: 0;
+		    justify-content: center;
 		    flex-shrink: 0;
 		}
 		
 		.header-logo img {
-		    height: 100%;             /* L'altezza si adatta esattamente all'header */
-		    width: auto;              /* Mantiene le proporzioni quadrate/rettangolari */
-		    object-fit: contain;
+		    width: 100%;
+		    height: 100%;
+		    object-fit: contain;    /* Mai tagliato, proporzioni perfette */
 		    display: block;
 		}
 		
-		/* Banner / Immagine a destra su PC */
+		/* Immagine banner/testo a destra */
 		.header-banner, .header-right-image {
-		    height: 100%;             /* Occupa tutta l'altezza dell'header */
+		    height: 75%;            /* Occupa il 75% dell'altezza dell'header */
 		    display: flex;
 		    align-items: center;
 		    justify-content: flex-end;
@@ -57,7 +58,7 @@
 		}
 		
 		.header-banner img, .header-right-image img {
-		    height: 85%;              /* Lascia un piccolo respiro sopra e sotto */
+		    height: 100%;           /* Riempie l'altezza del suo box mantenendo la larghezza automatica */
 		    width: auto;
 		    object-fit: contain;
 		    display: block;
@@ -240,36 +241,35 @@
 	/* Riduciamo leggermente l'altezza della testata e rimuoviamo il padding in eccesso */
     header {
         height: auto;
-        min-height: auto;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 15px 10px;
-        gap: 12px;
+        gap: 10px;
     }
 
     .header-logo {
         height: auto;
-        width: 140px;          /* Dimensione controllata del logo su telefono */
-        justify-content: center;
+        width: 110px;       /* Dimensione fissa ben visibile per il logo mobile */
+        aspect-ratio: 1 / 1;
     }
 
     .header-logo img {
-        height: auto;
         width: 100%;
+        height: 100%;
     }
 
     .header-banner, .header-right-image {
         height: auto;
         width: 100%;
+        max-width: 280px;   /* Evita che il testo diventi enorme su schermi stretti */
         justify-content: center;
     }
 
     .header-banner img, .header-right-image img {
-        height: auto;
-        max-height: 40px;      /* Altezza bloccata e ben leggibile per il banner su mobile */
-        width: auto;
-        max-width: 100%;
+        width: 100%;        /* Si adatta alla larghezza del telefono */
+        height: auto;       /* Mantiene le proporzioni corrette del testo */
+        object-fit: contain;
     }
 	
     /* 1. Sblocca lo scroll generale sul telefono */
