@@ -327,4 +327,15 @@
         margin-right: 0;
         margin-bottom: 20px;
     }
+	
+	/* Riduce leggermente l'immagine a destra per adattarla alla testata mobile */
+    .header-right-image {
+        height: 80px; /* Riduci l'altezza per lasciare margine rispetto ai bordi dell'header */
+    }
+
+    .header-right-image img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
 }
