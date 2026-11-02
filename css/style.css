@@ -16,13 +16,15 @@
 			overflow: hidden;			
         }
 
-        /* Testata (Header) */
+        /* ==========================================
+		   Testata (Header) - Adattiva e Proporzionata
+		   ========================================== */
 		header {
 		    display: flex;
 		    align-items: center;
 		    justify-content: space-between;
-		    height: 110px; /* Diamo un'altezza fissa e pulita alla testata su PC */
-		    padding: 10px 20px;
+		    height: auto;             /* Si adatta automaticamente al contenuto */
+		    padding: 20px 30px;       /* Aumenta lo spazio sopra e sotto per dare respiro */
 		    background-color: #000000;
 		    box-sizing: border-box;
 		    flex-shrink: 0;
@@ -30,37 +32,36 @@
 		
 		/* Logo a sinistra */
 		.header-logo {
-		    width: 200px;
-		    height: 100%;
+		    width: 220px;
 		    display: flex;
 		    align-items: center;
-		    justify-content: center;
+		    justify-content: flex-start;
 		    padding: 0;
 		    flex-shrink: 0;
 		}
 		
 		.header-logo img {
-		    max-height: 100%;
-		    width: auto;
+		    width: 100%;
+		    height: auto;             /* Mantiene perfettamente le proporzioni */
 		    object-fit: contain;
 		    display: block;
 		}
 		
-		/* Banner / Immagine a destra */
+		/* Banner / Immagine a destra (Testo) */
 		.header-banner, .header-right-image {
-		    height: 100%;
 		    display: flex;
-		    align-items: center;      /* Centra perfettamente in verticale */
-		    justify-content: flex-end; /* Allinea a destra su PC */
-		    overflow: hidden;
+		    align-items: center;
+		    justify-content: flex-end;
 		    flex: 1;
+		    max-width: 65%;           /* Evita che l'immagine testuale diventi troppo larga */
 		}
 		
 		.header-banner img, .header-right-image img {
-		    max-height: 75%;          /* Lascia un bel margine sopra e sotto senza toccare i bordi */
-		    width: auto;
-		    max-width: 100%;
+		    width: 100%;
+		    max-width: 100%;          /* Sfrutta lo spazio ma non sfora */
+		    height: auto;             /* Rispetta rigorosamente le proporzioni originali */
 		    object-fit: contain;
+		    display: block;
 		}
 
         /* Struttura principale sotto la testata */
@@ -240,34 +241,33 @@
 	/* Riduciamo leggermente l'altezza della testata e rimuoviamo il padding in eccesso */
     header {
         height: auto;
-        min-height: 110px;
-        flex-direction: column;  /* Mette il logo sopra e il testo sotto */
+        flex-direction: column;  /* Logo sopra, banner testuale sotto */
         justify-content: center;
         align-items: center;
-        padding: 10px;
+        padding: 20px 15px;      /* Ottimo respiro verticale e orizzontale */
+        gap: 15px;               /* Spazio tra il logo e la scritta sotto */
     }
 
     .header-logo {
-        width: 140px;
-        height: auto;
-        margin-bottom: 5px;
+        width: 160px;            /* Dimensione ideale del logo su smartphone */
+        justify-content: center;
     }
 
     .header-logo img {
-        max-height: 50px;
-        width: auto;
+        width: 100%;
+        height: auto;
     }
 
     .header-banner, .header-right-image {
         width: 100%;
-        height: auto;
-        justify-content: center; /* Centra la scritta a destra su mobile */
-        margin-top: 5px;
+        max-width: 100%;
+        justify-content: center;
     }
 
     .header-banner img, .header-right-image img {
-        max-height: 35px;        /* Dimensione bilanciata per smartphone */
-        width: auto;
+        width: 100%;             /* Occupa bene lo schermo mobile senza rimpicciolirsi troppo */
+        max-width: 320px;        /* Limite massimo per non farla sgranare */
+        height: auto;
     }
 
 	
