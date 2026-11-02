@@ -1,290 +1,253 @@
 /* Reset di base e sfondo nero globale */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            /* min-height: 100vh; */
-			height: 100vh;
-            display: flex;
-            flex-direction: column;	
-			overflow: hidden;			
-        }
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    overflow: hidden;            
+}
 
-        /* ==========================================
-		   TESTATA (Header) - PC (Fissa e Bilanciata)
-		   ========================================== */
-		header {
-		    display: flex;
-		    align-items: center;
-		    justify-content: space-between;
-		    height: 220px;            /* Altezza fissa pulita per PC */
-		    padding: 10px 30px;
-		    background-color: #000000;
-			border-bottom: 1px solid #FF9099;
-		    box-sizing: border-box;
-		    flex-shrink: 0;
-		}
-		
-		/* Logo a sinistra su PC */
-		.header-logo {
-		    height: 100%;             /* Riempie esattamente i 120px dell'header */
-		    width: auto;
-		    display: flex;
-		    align-items: center;
-		    justify-content: flex-start;
-		    padding: 0;
-		    flex-shrink: 0;
-		}
-		
-		.header-logo img {
-		    height: 90% !important;   /* Occupa il 90% dell'altezza dell'header lasciando un piccolo margine */
-		    width: auto !important;   /* Mantiene le proporzioni perfette */
-		    max-width: none;
-		    object-fit: contain;
-		    display: block;
-		}
-		
-		/* Banner / Immagine di testo a destra su PC */
-		.header-banner, .header-right-image {
-		    height: 100%;             /* Riempie l'altezza dell'header */
-		    display: flex;
-		    align-items: center;
-		    justify-content: flex-end;
-		    overflow: hidden;
-		}
-		
-		.header-banner img, .header-right-image img {
-		    height: 70% !important;   /* Altezza ideale per rendere la scritta ben leggibile */
-		    width: auto !important;   /* Mantiene le proporzioni originali senza schiacciarla */
-		    max-width: 100%;
-		    object-fit: contain;
-		    display: block;
-		}
+/* ==========================================
+   TESTATA (Header) - PC (Fissa e Bilanciata)
+   ========================================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 220px;            /* Altezza fissa pulita per PC */
+    padding: 10px 30px;
+    background-color: #000000;
+    border-bottom: 1px solid #FF9099;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
 
-        /* Struttura principale sotto la testata */
-        .container {
-            display: flex;
-            flex: 1;
-			overflow: hidden;
-        }
+/* Logo a sinistra su PC */
+.header-logo {
+    height: 100%;            
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    flex-shrink: 0;
+}
 
-        /* Pannello di navigazione a sinistra */
-        nav {
-            width: 220px;
-            background-color: #121212;
-            border-right: 1px solid #FF9099;
-            padding: 20px 0;
-            flex-shrink: 0;
-			height: 100%;
-        }
+.header-logo img {
+    height: 90% !important;   
+    width: auto !important;   
+    max-width: none;
+    object-fit: contain;
+    display: block;
+}
 
-        nav ul {
-            list-style: none;
-        }
+/* Banner / Immagine di testo a destra su PC */
+.header-banner, .header-right-image {
+    height: 100%;             
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
 
-        nav ul li a {
-            display: block;
-            padding: 12px 20px;
-            color: #cccccc;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s, color 0.2s;
-        }
+.header-banner img, .header-right-image img {
+    height: 70% !important;   
+    width: auto !important;   
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
 
-        nav ul li a:hover {
-            background-color: #252525;
-            color: #ffffff;
-        }
+/* Pannello di navigazione a sinistra */
+nav {
+    width: 220px;
+    background-color: #121212;
+    border-right: 1px solid #FF9099;
+    padding: 20px 0;
+    flex-shrink: 0;
+    height: 100%;
+}
 
-        /* Area dei contenuti */
-		.container {
-			display: flex;
-			flex: 1;
-			height: calc(100vh - 160px);
-			overflow: hidden;
-		}
+nav ul {
+    list-style: none;
+}
 
-		main {
-			flex: 1;
-			padding: 30px;
-			background-color: #000000;
-			overflow-y: auto;
-			/* Abbiamo rimosso height: 100% perché flex: 1 gestisce già perfettamente l'altezza */
-		}
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
 
-		/* IMPORTANTE: Dice all'ultimo paragrafo o elemento dentro il main di non avere margini sotto, 
-		   evitando quei pochi pixel di troppo che fanno comparire la scrollbar */
-		main > *:last-child {
-			margin-bottom: 0;
-		}
+nav ul li a:hover {
+    background-color: #252525;
+    color: #ffffff;
+}
 
-        main h1 {
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
+/* Area dei contenuti e container unificati */
+.container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 220px); /* Aggiornato in base all'altezza dell'header PC */
+    overflow: hidden;
+}
 
-        /* Testo giustificato applicato via CSS */
-        main p {
-            line-height: 1.6;
-            color: #aaaaaa;
-            text-align: justify; 
-            margin-bottom: 20px;
-        }
-		
-		/* Contenitore flessibile per immagine e testo affiancati */
-        .content-row {
-            display: flex;
-            align-items: center; /* Allinea verticalmente al centro (puoi mettere 'flex-start' per allineare in alto) */
-            gap: 30px;           /* Spazio di separazione tra l'immagine e il testo */
-            margin: 40px 0;      /* Distanza sopra e sotto questo blocco */
-        }
+main {
+    flex: 1;
+    padding: 30px;
+    background-color: #000000;
+    overflow-y: auto;
+}
 
-        /* Stile per il box dell'immagine */
-        .content-image {
-            width: 350px;        /* Puoi modificare la larghezza a piacimento */
-            flex-shrink: 0;      /* Impedisce all'immagine di rimpicciolirsi */
-        }
+main > *:last-child {
+    margin-bottom: 0;
+}
 
-        .content-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;  /* Opzionale: arrotonda leggermente gli angoli */
-            display: block;
-        }
+main h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
 
-        /* Stile per il box del testo */
-        .content-text {
-            flex: 1;             /* Fa in modo che il testo occupi tutto lo spazio rimanente */
-        }
+main p {
+    line-height: 1.6;
+    color: #aaaaaa;
+    text-align: justify;    
+    margin-bottom: 20px;
+}
 
-        .content-text h2 {
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
+/* Contenitore flessibile per immagine e testo affiancati */
+.content-row {
+    display: flex;
+    align-items: center; 
+    gap: 30px;           
+    margin: 40px 0;     
+}
 
-        .content-text p {
-            text-align: justify;
-            color: #aaaaaa;
-            line-height: 1.6;
-        }
-		/* Contenitore per sicurezza */
-        .text-with-image {
-            overflow: hidden; /* Evita che il testo "debordi" fuori dal blocco */
-            margin-bottom: 30px;
-        }
+.content-image {
+    width: 350px;        
+    flex-shrink: 0;     
+}
 
-        /* Regola per l'immagine in alto a sinistra con testo intorno */
-        .img-float-left {
-            float: left;             /* Spinge l'immagine a sinistra e fa scorrere il testo attorno */
-            width: 300px;            /* Imposta la larghezza desiderata dell'immagine */
-            height: auto;            /* Mantiene le proporzioni originali */
-            margin-right: 20px;      /* Spazio di respiro tra l'immagine e il testo a destra */
-            margin-bottom: 15px;     /* Spazio sotto l'immagine prima che il testo continui sotto */
-            border-radius: 4px;      /* Opzionale: arrotonda leggermente i bordi */
-        }
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;  
+    display: block;
+}
 
-        /* Assicura che i paragrafi all'interno siano giustificati */
-        .text-with-image p {
-            text-align: justify;
-            color: #aaaaaa;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-		
-		.responsive-img {
-			width: 100%;
-			height: auto;
-			border-radius: 6px; /* Opzionale: arrotonda i bordi */
-			margin: 20px 0;     /* Spazio sopra e sotto */
-		}
+.content-text {
+    flex: 1;             
+}
 
-		/* ==========================================
-		   SCROLLBAR NERA SU CHROME / EDGE / SAFARI
-		   ========================================== */
+.content-text h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
 
-		/* 1. Applica la scrollbar sia all'intera pagina che al main */
-		::-webkit-scrollbar {
-			width: 8px;
-			height: 8px;
-		}
+.content-text p {
+    text-align: justify;
+    color: #aaaaaa;
+    line-height: 1.6;
+}
 
-		/* 2. Sfondo del binario di scorrimento (Nero puro) */
-		::-webkit-scrollbar-track {
-			background: #FF9099 !important;
-		}
+.text-with-image {
+    overflow: hidden; 
+    margin-bottom: 30px;
+}
 
-		/* 3. Barretta che si muove (Nero o grigio scurissimo) */
-		::-webkit-scrollbar-thumb {
-			background: #111111 !important; /* Metti #000000 se la vuoi totalmente invisibile */
-			border-radius: 4px;
-			border: 1px solid #000000;
-		}
+.img-float-left {
+    float: left;             
+    width: 300px;            
+    height: auto;            
+    margin-right: 20px;     
+    margin-bottom: 15px;     
+    border-radius: 4px;     
+}
 
-		/* 4. Quando ci passi sopra con il mouse */
-		::-webkit-scrollbar-thumb:hover {
-			background: #222222 !important;
-		}
+.text-with-image p {
+    text-align: justify;
+    color: #aaaaaa;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
 
-		/* 5. Angolo tra le due scrollbar (se presente) */
-		::-webkit-scrollbar-corner {
-			background: #000000 !important;
-		}
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px; 
+    margin: 20px 0;     
+}
+
+/* ==========================================
+   SCROLLBAR NERA SU CHROME / EDGE / SAFARI
+   ========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FF9099 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111111 !important; 
+    border-radius: 4px;
+    border: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #222222 !important;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000000 !important;
+}
 
 /* ==========================================
    VERSIONE MOBILE (Smartphone)
    ========================================== */
 @media (max-width: 768px) {
 
-	/* Riduciamo leggermente l'altezza della testata e rimuoviamo il padding in eccesso */
-    header {
-        height: 90px; /* puoi regolare l'altezza come preferisci, es. 90px o 100px */
-    }
-
-    .header-logo {
-        width: 110px;        /* Larghezza fissa proporzionata */
-        padding: 4px;        /* Riduciamo il padding per dare più spazio al logo */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-		background-color: transparent !important;
-		border: none;
-    }
-
-    .header-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Garantisce che il logo si veda intero senza mai venire tagliato */
-    }
-	
-    /* 1. Sblocca lo scroll generale sul telefono */
     body {
         height: auto;
         overflow: auto;
     }
 
-    /* 2. Riduci l'altezza della testata per non occuparetroppo spazio */
     header {
         height: 100px;
+        padding: 10px;
     }
 
     .header-logo {
-        width: 65px;
+        width: 72px;
+        height: 100%;
     }
 
-    /* 3. Metti il menu SOPRA e il testo SOTTO (disposizione in colonna) */
+    .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+        background-color: transparent !important;
+        border: none;
+    }
+
     .container {
         flex-direction: column;
         height: auto;
         overflow: visible;
     }
 
-    /* 4. Il menu di navigazione diventa una barra orizzontale in alto */
     nav {
         width: 100%;
         height: auto;
@@ -303,19 +266,16 @@
         text-align: center;
     }
 
-    /* 5. L'area dei contenuti torna a scorrere normalmente */
     main {
         height: auto;
         overflow-y: visible;
         padding: 20px;
     }
 
-    /* 6. L'immagine non sta più a sinistra ma va sopra al testo a tutta larghezza */
     .img-float-left {
         float: none;
         width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
-    }	
-	
+    }    
 }
