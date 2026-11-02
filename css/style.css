@@ -23,16 +23,16 @@
 		    display: flex;
 		    align-items: center;
 		    justify-content: space-between;
-		    height: auto;             /* Si adatta automaticamente al contenuto */
-		    padding: 20px 30px;       /* Aumenta lo spazio sopra e sotto per dare respiro */
+		    height: 130px;            /* Altezza fissa ideale per PC (puoi regolarla a 120px o 140px se vuoi) */
+		    padding: 15px 30px;
 		    background-color: #000000;
 		    box-sizing: border-box;
 		    flex-shrink: 0;
 		}
 		
-		/* Logo a sinistra */
+		/* Logo a sinistra su PC */
 		.header-logo {
-		    width: 220px;
+		    height: 100%;             /* Occupa tutta l'altezza dell'header */
 		    display: flex;
 		    align-items: center;
 		    justify-content: flex-start;
@@ -41,25 +41,24 @@
 		}
 		
 		.header-logo img {
-		    width: 100%;
-		    height: auto;             /* Mantiene perfettamente le proporzioni */
+		    height: 100%;             /* L'altezza si adatta esattamente all'header */
+		    width: auto;              /* Mantiene le proporzioni quadrate/rettangolari */
 		    object-fit: contain;
 		    display: block;
 		}
 		
-		/* Banner / Immagine a destra (Testo) */
+		/* Banner / Immagine a destra su PC */
 		.header-banner, .header-right-image {
+		    height: 100%;             /* Occupa tutta l'altezza dell'header */
 		    display: flex;
 		    align-items: center;
 		    justify-content: flex-end;
-		    flex: 1;
-		    max-width: 65%;           /* Evita che l'immagine testuale diventi troppo larga */
+		    overflow: hidden;
 		}
 		
 		.header-banner img, .header-right-image img {
-		    width: 100%;
-		    max-width: 100%;          /* Sfrutta lo spazio ma non sfora */
-		    height: auto;             /* Rispetta rigorosamente le proporzioni originali */
+		    height: 85%;              /* Lascia un piccolo respiro sopra e sotto */
+		    width: auto;
 		    object-fit: contain;
 		    display: block;
 		}
@@ -241,35 +240,37 @@
 	/* Riduciamo leggermente l'altezza della testata e rimuoviamo il padding in eccesso */
     header {
         height: auto;
-        flex-direction: column;  /* Logo sopra, banner testuale sotto */
+        min-height: auto;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 20px 15px;      /* Ottimo respiro verticale e orizzontale */
-        gap: 15px;               /* Spazio tra il logo e la scritta sotto */
+        padding: 15px 10px;
+        gap: 12px;
     }
 
     .header-logo {
-        width: 160px;            /* Dimensione ideale del logo su smartphone */
+        height: auto;
+        width: 140px;          /* Dimensione controllata del logo su telefono */
         justify-content: center;
     }
 
     .header-logo img {
-        width: 100%;
         height: auto;
+        width: 100%;
     }
 
     .header-banner, .header-right-image {
+        height: auto;
         width: 100%;
-        max-width: 100%;
         justify-content: center;
     }
 
     .header-banner img, .header-right-image img {
-        width: 100%;             /* Occupa bene lo schermo mobile senza rimpicciolirsi troppo */
-        max-width: 320px;        /* Limite massimo per non farla sgranare */
         height: auto;
+        max-height: 40px;      /* Altezza bloccata e ben leggibile per il banner su mobile */
+        width: auto;
+        max-width: 100%;
     }
-
 	
     /* 1. Sblocca lo scroll generale sul telefono */
     body {
