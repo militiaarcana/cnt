@@ -18,13 +18,12 @@
 
         /* Testata (Header) */
         header {
-            display: flex;
-            height: 220px; /* Aumentata l'altezza per far respirare il logo */
-            background-color: #000000;
-            border-bottom: 1px solid #FF9099;			
-            overflow: hidden;
-			flex-shrink: 0;
-        }
+		    display: flex;
+		    align-items: center;          /* Centra verticalmente gli elementi nell'header */
+		    justify-content: space-between; /* Distribuisce logo a sinistra e banner a destra */
+		    padding: 10px 20px;
+		    box-sizing: border-box;
+		}
 
         /* Logo a sinistra */
         .header-logo {
@@ -47,18 +46,20 @@
         }
 
         /* Banner della testata */
-        .header-banner {
-            flex: 1;
-            overflow: hidden;
-        }
-
-        .header-banner img {
-            width: 100%;
-            height: 100%;
-            /* 'cover' adatta e stretta l'immagine per riempire tutto il banner senza lasciare spazi bianchi */
-            object-fit: cover; 
-            object-position: center; /* Mantiene il centro dell'immagine ben visibile */
-        }
+        .header-banner, .header-right-image {
+		    height: 100%;
+		    display: flex;
+		    align-items: center;          /* Centra l'immagine in verticale */
+		    justify-content: center;      /* Centra l'immagine in orizzontale */
+		    overflow: hidden;
+		}
+		
+		/* L'immagine del testo deve adattarsi senza sbordare */
+		.header-banner img, .header-right-image img {
+		    max-height: 85%;              /* Lascia un piccolo margine sopra e sotto */
+		    width: auto;                  /* Mantiene le proporzioni originali */
+		    object-fit: contain;          /* Evita deformazioni e tagli */
+		}
 
         /* Struttura principale sotto la testata */
         .container {
@@ -229,22 +230,6 @@
 			background: #000000 !important;
 		}
 
-		/* Il contenitore dell'immagine nell'header */
-		.header-logo, .header-right-image { /* (usa la classe esatta del contenitore che hai assegnato) */
-		    height: 100%;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		}
-		
-		/* Regola fondamentale per l'immagine quadrata */
-		.header-logo img, .header-right-image img {
-		    height: 100%;           /* Riempie l'altezza disponibile dell'header */
-		    width: auto;            /* La larghezza si calcola in automatico per mantenere le proporzioni */
-		    object-fit: contain;    /* Evita qualsiasi taglio o deformazione */
-		    max-width: 100%;        /* Impedisce sbavature fuori dal blocco */
-		}
-
 /* ==========================================
    VERSIONE MOBILE (Smartphone)
    ========================================== */
@@ -279,7 +264,25 @@
 
     /* 2. Riduci l'altezza della testata per non occuparetroppo spazio */
     header {
-        height: 100px;
+        height: auto;
+        min-height: 80px;
+        flex-direction: row;      /* O a colonna se preferisci il logo sopra */
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .header-banner, .header-right-image {
+        width: 100%;
+        height: auto;
+        max-height: 60px;         /* Limita l'altezza del banner su mobile */
+        margin-top: 5px;
+    }
+
+    .header-banner img, .header-right-image img {
+        max-height: 50px;         /* Forza un'altezza sicura visibile per smartphone */
+        width: auto;
+        object-fit: contain;
     }
 
     .header-logo {
