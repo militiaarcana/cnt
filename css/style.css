@@ -230,6 +230,22 @@
 			background: #000000 !important;
 		}
 
+		/* Il contenitore dell'immagine nell'header */
+		.header-logo, .header-right-image { /* (usa la classe esatta del contenitore che hai assegnato) */
+		    height: 100%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		
+		/* Regola fondamentale per l'immagine quadrata */
+		.header-logo img, .header-right-image img {
+		    height: 100%;           /* Riempie l'altezza disponibile dell'header */
+		    width: auto;            /* La larghezza si calcola in automatico per mantenere le proporzioni */
+		    object-fit: contain;    /* Evita qualsiasi taglio o deformazione */
+		    max-width: 100%;        /* Impedisce sbavature fuori dal blocco */
+		}
+
 /* ==========================================
    VERSIONE MOBILE (Smartphone)
    ========================================== */
