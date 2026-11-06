@@ -89,7 +89,13 @@ nav ul li a {
     transition: background-color 0.2s, color 0.2s;
 }
 
+nav ul li a.active,
 nav ul li a:hover {
+    background-color: #252525;
+    color: #ffffff;
+}
+
+nav ul li a: {
     background-color: #252525;
     color: #ffffff;
 }
@@ -188,6 +194,24 @@ main p {
     margin: 20px 0;     
 }
 
+/* Contenitore per centrare e mettere in colonna le immagini */
+.center-images {
+    display: flex;
+    flex-direction: column;  /* Dispone le immagini una sotto l'altra in verticale */
+    align-items: center;     /* Centra perfettamente le immagini in orizzontale */
+    gap: 20px;               /* Spazio di distanza tra un'immagine e la successiva */
+    margin: 20px 0;
+}
+
+/* Stile per le immagini all'interno del blocco centrato */
+.center-images img {
+    width: 100%;
+    max-width: 500px;        /* Puoi aumentare o diminuire questo limite per decidere quanto farle grandi */
+    height: auto;
+    border-radius: 6px;      /* Opzionale: arrotonda leggermente i bordi */
+    display: block;
+}
+
 /* ==========================================
    SCROLLBAR NERA SU CHROME / EDGE / SAFARI
    ========================================== */
@@ -278,4 +302,20 @@ main p {
         margin-right: 0;
         margin-bottom: 20px;
     }    
+	
+	.content-text p {
+		text-align: left;
+		color: #aaaaaa;
+		line-height: 1.6;
+	}
+	
+	.content-text {
+		flex: 1;             
+	}
+
+	.content-text h2 {
+		margin-bottom: 10px;
+		color: #ffffff;
+	}
+
 }
